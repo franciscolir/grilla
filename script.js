@@ -414,9 +414,10 @@
       tabla.appendChild(filaEncabezado);
 
       // Crear filas
+      
       facturas.forEach(factura => {
         const fila = document.createElement("tr");
-
+/*
         // Iterar sobre cada campo del objeto
         Object.values(factura).forEach(valor => {
           const celda = document.createElement("td");
@@ -433,6 +434,37 @@
 
         tabla.appendChild(fila);
       });
+*/
+
+      Object.values(factura).forEach(valor => {
+        const celda = document.createElement("td");
+      
+        if (Array.isArray(valor)) {
+          // Si es un array (como productos), mostrar una lista formateada
+          celda.textContent = valor.map(item => {
+            if (typeof item === "object" && item !== null) {
+              return Object.values(item).join(" - ");
+            }
+            return item;
+          }).join(" | ");
+        } else if (typeof valor === "object" && valor !== null) {
+          // Si es un objeto (como cliente), mostrar sus propiedades concatenadas
+          celda.textContent = Object.values(valor).join(", ");
+        } else {
+          // Si es un valor primitivo, mostrar directamente
+          celda.textContent = valor;
+        }
+      
+        fila.appendChild(celda);
+      });
+      
+      tabla.appendChild(fila)
+    });
+      
+
+
+
+
 
       // Insertar tabla en el contenedor
       const contenedor = document.getElementById("tabla-container");
