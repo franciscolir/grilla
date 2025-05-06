@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grilla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h2>Lista de Facturas</h2>
+<button onclick="cargarFacturas()">Cargar Facturas</button>
+<div id="tabla-container"></div>
+
+
+
+<div>
+    <label for="registrosPorPagina">Registros por página:</label>
+    <select id="registrosPorPagina">
+      <option value="5">5</option>
+      <option value="10" selected>10</option>
+      <option value="20">20</option>
+    </select>
+  </div>
+  
+  <div id="tabla-container"></div>
+  <div id="paginacion"></div>
+  
+
+<script src="script2.js"></script>
+</body>
+</html>

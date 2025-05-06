@@ -1,5 +1,13 @@
-  // Simula una llamada a una API que devuelve un JSON con facturas
-  function obtenerDatosAPI() {
+let paginaActual = 1;
+let registrosPorPagina = 10;
+let facturasGlobal = [];
+
+document.getElementById("registrosPorPagina").addEventListener("change", () => {
+  registrosPorPagina = parseInt(document.getElementById("registrosPorPagina").value);
+  paginaActual = 1;
+  renderizarTabla();
+});
+function obtenerDatosAPI() {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
@@ -389,72 +397,100 @@
       }, 1000); // Simular retardo de red
     });
   }
+async function cargarFacturas() {
+  try {
+    const respuesta = await obtenerDatosAPI(); // Simula tu API
+    facturasGlobal = respuesta.facturas || [];
 
-  async function cargarFacturas() {
-    try {
-      const respuesta = await obtenerDatosAPI(); // Llamada a la "API"
-      const facturas = respuesta.facturas;
+    if (facturasGlobal.length === 0) {
+      document.getElementById("tabla-container").innerHTML = "<p>No hay datos disponibles.</p>";
+      return;
+    }
 
-      if (!facturas || facturas.length === 0) {
-        document.getElementById("tabla-container").innerHTML = "<p>No hay datos disponibles.</p>";
-        return;
+    renderizarTabla();
+  } catch (error) {
+    console.error("Error al cargar las facturas:", error);
+    document.getElementById("tabla-container").innerHTML = "<p>Error al cargar los datos.</p>";
+  }
+}
+
+function renderizarTabla() {
+  const contenedor = document.getElementById("tabla-container");
+  contenedor.innerHTML = "";
+
+  const tabla = document.createElement("table");
+
+  // Encabezados
+  const encabezados = Object.keys(facturasGlobal[0]);
+  const filaEncabezado = document.createElement("tr");
+  encabezados.forEach(encabezado => {
+    const th = document.createElement("th");
+    th.textContent = encabezado;
+    filaEncabezado.appendChild(th);
+  });
+  tabla.appendChild(filaEncabezado);
+
+  // Calcular rangos
+  const inicio = (paginaActual - 1) * registrosPorPagina;
+  const fin = inicio + registrosPorPagina;
+  const facturasPagina = facturasGlobal.slice(inicio, fin);
+
+  // Filas
+  facturasPagina.forEach(factura => {
+    const fila = document.createElement("tr");
+    Object.values(factura).forEach(valor => {
+      const celda = document.createElement("td");
+
+      if (Array.isArray(valor)) {
+        celda.textContent = valor.map(item =>
+          typeof item === "object" && item !== null
+            ? Object.values(item).join(" - ")
+            : item
+        ).join(" | ");
+      } else if (typeof valor === "object" && valor !== null) {
+        celda.textContent = Object.values(valor).join(", ");
+      } else {
+        celda.textContent = valor;
       }
 
-      // Crear tabla
-      const tabla = document.createElement("table");
-
-      // Crear encabezados
-      const encabezados = Object.keys(facturas[0]);
-      const filaEncabezado = document.createElement("tr");
-      encabezados.forEach(encabezado => {
-        const th = document.createElement("th");
-        th.textContent = encabezado;
-        filaEncabezado.appendChild(th);
-      });
-      tabla.appendChild(filaEncabezado);
-
-      // Crear filas
-      
-      facturas.forEach(factura => {
-        const fila = document.createElement("tr");
-
-      Object.values(factura).forEach(valor => {
-        const celda = document.createElement("td");
-      
-        if (Array.isArray(valor)) {
-          // Si es un array (como productos), mostrar una lista formateada
-          celda.textContent = valor.map(item => {
-            if (typeof item === "object" && item !== null) {
-              return Object.values(item).join(" - ");
-            }
-            return item;
-          }).join(" | ");
-        } else if (typeof valor === "object" && valor !== null) {
-          // Si es un objeto (como cliente), mostrar sus propiedades concatenadas
-          celda.textContent = Object.values(valor).join(", ");
-        } else {
-          // Si es un valor primitivo, mostrar directamente
-          celda.textContent = valor;
-        }
-      
-        fila.appendChild(celda);
-      });
-      
-      tabla.appendChild(fila)
+      fila.appendChild(celda);
     });
-      
+    tabla.appendChild(fila);
+  });
 
+  contenedor.appendChild(tabla);
+  renderizarPaginacion();
+}
 
+function renderizarPaginacion() {
+  const totalPaginas = Math.ceil(facturasGlobal.length / registrosPorPagina);
+  const paginacion = document.getElementById("paginacion");
+  paginacion.innerHTML = "";
 
-
-
-      // Insertar tabla en el contenedor
-      const contenedor = document.getElementById("tabla-container");
-      contenedor.innerHTML = ""; // Limpiar contenido previo
-      contenedor.appendChild(tabla);
-
-    } catch (error) {
-      console.error("Error al cargar las facturas:", error);
-      document.getElementById("tabla-container").innerHTML = "<p>Error al cargar los datos.</p>";
+  const btnAnterior = document.createElement("button");
+  btnAnterior.textContent = "Anterior";
+  btnAnterior.disabled = paginaActual === 1;
+  btnAnterior.onclick = () => {
+    if (paginaActual > 1) {
+      paginaActual--;
+      renderizarTabla();
     }
   };
+
+  const btnSiguiente = document.createElement("button");
+  btnSiguiente.textContent = "Siguiente";
+  btnSiguiente.disabled = paginaActual === totalPaginas;
+  btnSiguiente.onclick = () => {
+    if (paginaActual < totalPaginas) {
+      paginaActual++;
+      renderizarTabla();
+    }
+  };
+
+  const info = document.createElement("span");
+  info.textContent = ` Página ${paginaActual} de ${totalPaginas} `;
+
+  paginacion.appendChild(btnAnterior);
+  paginacion.appendChild(info);
+  paginacion.appendChild(btnSiguiente);
+}
