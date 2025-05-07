@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grilla 2</title>
+    <title>Grilla </title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <section>
-    <h2>Grilla</h2>
+    <h2>Grilla de Data con filtro</h2>
     <div class="contenedor">
 
         <!-- Columna Async -->
         <div class="columna">
           <div class="titulo">Async/Await</div>
-          <button class="async-btn" onclick="activarBoton(this); medirCarga(() => cargarDatos(false), '#4CAF50')">Cargar Facturas (JSON)</button>
-          <button class="async-btn" onclick="activarBoton(this); medirCarga(() => cargarDatos(true), '#4CAF50')">Cargar Usuarios (API)</button>
+          <button class="async-btn" onclick="activarBoton(this); medirCarga(() => cargarDatos(false), '#4CAF50')">Cargar Data (JSON)</button>
+          <button class="async-btn" onclick="activarBoton(this); medirCarga(() => cargarDatos(true), '#4CAF50')">Cargar Data (API)</button>
         </div>
       
         <!-- Contador en el centro -->
@@ -27,8 +27,8 @@
         <!-- Columna Promises -->
         <div class="columna">
           <div class="titulo">Promises (.then)</div>
-          <button class="promise-btn" onclick="activarBoton(this); medirCarga(() => cargarDatosConPromise(false), '#2196F3')">Cargar Facturas (JSON)</button>
-          <button class="promise-btn" onclick="activarBoton(this); medirCarga(() => cargarDatosConPromise(true), '#2196F3')">Cargar Usuarios (API)</button>
+          <button class="promise-btn" onclick="activarBoton(this); medirCarga(() => cargarDatosConPromise(false), '#2196F3')">Cargar Data (JSON)</button>
+          <button class="promise-btn" onclick="activarBoton(this); medirCarga(() => cargarDatosConPromise(true), '#2196F3')">Cargar Data (API)</button>
         </div>
       </div>
       

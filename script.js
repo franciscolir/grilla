@@ -2,7 +2,7 @@ let paginaActual = 1;
 let registrosPorPagina = 10;
 let facturasGlobal = [];
 let filtros = {};
-
+const URL_API = 'https://jsonplaceholder.typicode.com/comments';
 document.getElementById("registrosPorPagina").addEventListener("change", () => {
   registrosPorPagina = parseInt(document.getElementById("registrosPorPagina").value);
   paginaActual = 1;
@@ -18,7 +18,7 @@ async function obtenerDatosAPI() {
     try {
           
     // Llamada real a una API pública de ejemplo (JSONPlaceholder)
-    const respuesta = await fetch('https://jsonplaceholder.typicode.com/users');
+    const respuesta = await fetch(URL_API);
 
       if (!respuesta.ok) throw new Error("No se pudo cargar el archivo facturas.json");
   
@@ -92,7 +92,7 @@ async function obtenerDatosAPI() {
 //------------------PROMISE FUNCTION---------------------------//
 function obtenerDatosAPIConPromise() {
   // Simulamos una función que devuelve una Promesa sin usar async/await
-  return fetch('https://jsonplaceholder.typicode.com/users')
+  return fetch(URL_API)
     .then(respuesta => {
       if (!respuesta.ok) {
         throw new Error("No se pudo cargar usuarios");
@@ -191,7 +191,8 @@ function obtenerDatosJSONConPromise() {
     const tabla = document.createElement("table");
   
 
-  // ✅ Validación defensiva para evitar el error
+  //Validación para comprobar tipo de dato
+
   if (!Array.isArray(facturasGlobal) || facturasGlobal.length === 0 || typeof facturasGlobal[0] !== "object") {
     contenedor.innerHTML = "<p>No hay datos disponibles para mostrar.</p>";
     return;
