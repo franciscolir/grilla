@@ -10,17 +10,37 @@ document.getElementById("registrosPorPagina").addEventListener("change", () => {
 });
 async function obtenerDatosAPI() {
     try {
+          
+    // Llamada real a una API pública de ejemplo (JSONPlaceholder)
+    const respuesta = await fetch('https://jsonplaceholder.typicode.com/users');
+
+      if (!respuesta.ok) throw new Error("No se pudo cargar el archivo facturas.json");
+  
+      const datos = await respuesta.json();
+      console.log("datos ", datos)
+      return datos;
+    } catch (error) {
+      console.error("Error al obtener datos de la API simulada:", error);
+      return { usuarios: [] }; // manejar error devolviendo array vacío
+    }
+  }
+  
+  async function obtenerDatosJSON() {
+    try {
+          // Simular un retraso de 2 segundos
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
       const respuesta = await fetch('facturas.json');
       if (!respuesta.ok) throw new Error("No se pudo cargar el archivo facturas.json");
   
       const datos = await respuesta.json();
-      return datos; // debe tener la forma { facturas: [...] }
+      console.log("datos ", datos)
+      return datos;
     } catch (error) {
       console.error("Error al obtener datos de la API simulada:", error);
       return { facturas: [] }; // manejar error devolviendo array vacío
     }
   }
-  
 
 
   
@@ -30,10 +50,18 @@ async function obtenerDatosAPI() {
     renderizarTabla();
   });
   
-  async function cargarFacturas() {
+  async function cargarDatos(usarAPI = false) {
     try {
-      const respuesta = await obtenerDatosAPI();
-      facturasGlobal = respuesta.facturas || [];
+      if (usarAPI){
+        const respuesta = await obtenerDatosAPI();
+        facturasGlobal = respuesta || [];
+
+      }else{
+
+        const respuesta = await obtenerDatosJSON();
+        facturasGlobal = respuesta.facturas || [];
+    
+      }
   
       if (facturasGlobal.length === 0) {
         document.getElementById("tabla-container").innerHTML = "<p>No hay datos disponibles.</p>";
