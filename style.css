@@ -8,6 +8,74 @@ table {
     padding: 8px;
     text-align: left;
   }
-  th {
+ th {
     background-color: #f2f2f2;
   }
+
+
+  .contenedor {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+  }
+
+  .columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+  }
+
+  .async-btn,
+  .promise-btn {
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+  }
+  
+  /* Colores base */
+  .async-btn {
+    background-color: #4CAF50; /* Verde */
+  }
+  
+  .promise-btn {
+    background-color: #2196F3; /* Azul */
+  }
+  
+  /* Efecto hover */
+  .async-btn:hover,
+  .promise-btn:hover {
+    opacity: 0.85;
+  }
+  
+  /* Efecto al presionar */
+  .async-btn:active,
+  .promise-btn:active {
+    transform: scale(0.96);
+  }
+  
+  /* Estado activo persistente */
+  .boton-activo {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2) inset;
+    font-weight: bold;
+  }
+  
+
+  .titulo {
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  #contador-tiempo {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 10px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    min-width: 80px;
+  }
+  

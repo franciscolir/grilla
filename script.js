@@ -8,6 +8,12 @@ document.getElementById("registrosPorPagina").addEventListener("change", () => {
   paginaActual = 1;
   renderizarTabla();
 });
+
+
+
+
+//----------------------ASYNC-AWAIT FUNCTION---------------------------//
+
 async function obtenerDatosAPI() {
     try {
           
@@ -52,6 +58,7 @@ async function obtenerDatosAPI() {
   
   async function cargarDatos(usarAPI = false) {
     try {
+      
       if (usarAPI){
         const respuesta = await obtenerDatosAPI();
         facturasGlobal = respuesta || [];
@@ -75,6 +82,94 @@ async function obtenerDatosAPI() {
     }
   }
   
+//------------------------------------------------------------//
+
+
+
+
+
+
+//------------------PROMISE FUNCTION---------------------------//
+function obtenerDatosAPIConPromise() {
+  // Simulamos una función que devuelve una Promesa sin usar async/await
+  return fetch('https://jsonplaceholder.typicode.com/users')
+    .then(respuesta => {
+      if (!respuesta.ok) {
+        throw new Error("No se pudo cargar usuarios");
+      }
+      return respuesta.json();
+    })
+    .then(datos => {
+      console.log("datos", datos);
+      return { usuarios: datos };
+    })
+    .catch(error => {
+      console.error("Error al obtener datos de la API simulada:", error);
+      return { usuarios: [] };
+    });
+}
+
+function obtenerDatosJSONConPromise() {
+  return new Promise((resolve) => {
+    // Simular retraso de 1 segundo
+    setTimeout(() => {
+      fetch('facturas.json')
+        .then(respuesta => {
+          if (!respuesta.ok) {
+            throw new Error("No se pudo cargar el archivo facturas.json");
+          }
+          return respuesta.json();
+        })
+        .then(datos => {
+          console.log("datos", datos);
+          resolve(datos);
+        })
+        .catch(error => {
+          console.error("Error al obtener datos del archivo JSON:", error);
+          resolve({ facturas: [] });
+        });
+    }, 1000);
+  });
+}
+
+
+  function cargarDatosConPromise(usarAPIP = false) {
+    const contenedor = document.getElementById("tabla-container");
+  
+    const fuenteDatos = usarAPIP ? obtenerDatosAPI() : obtenerDatosJSON();
+  
+    fuenteDatos
+      .then(respuesta => {
+        // Si viene de API simulada, es un array directo
+        // Si viene de archivo JSON, esperamos un objeto con 'facturas'
+        facturasGlobal = usarAPIP ? (respuesta || []) : (respuesta.facturas || []);
+  
+        if (facturasGlobal.length === 0) {
+          contenedor.innerHTML = "<p>No hay datos disponibles.</p>";
+          return;
+        }
+        renderizarTabla();
+      })
+      .catch(error => {
+        console.error("Error al cargar las facturas:", error);
+        contenedor.innerHTML = "<p>Error al cargar los datos.</p>";
+      });
+  }
+  
+
+
+
+//------------------------------------------------------------//
+
+
+
+
+
+
+//--------------------FILTROS Y RENDERIZACION DE TABLAS---------------//
+
+
+
   function aplicarFiltros(data) {
     return data.filter(factura => {
       return Object.entries(filtros).every(([clave, valor]) => {
@@ -95,6 +190,14 @@ async function obtenerDatosAPI() {
   
     const tabla = document.createElement("table");
   
+
+  // ✅ Validación defensiva para evitar el error
+  if (!Array.isArray(facturasGlobal) || facturasGlobal.length === 0 || typeof facturasGlobal[0] !== "object") {
+    contenedor.innerHTML = "<p>No hay datos disponibles para mostrar.</p>";
+    return;
+  }
+
+
     const encabezados = Object.keys(facturasGlobal[0]);
   
     // Fila de filtros
@@ -210,3 +313,38 @@ async function obtenerDatosAPI() {
     paginacion.appendChild(btnSiguiente);
   }
   
+  function activarBoton(botonPresionado) {
+    const botones = document.querySelectorAll(".async-btn, .promise-btn");
+    botones.forEach(btn => btn.classList.remove("boton-activo"));
+    botonPresionado.classList.add("boton-activo");
+  }
+  
+
+  //--------------------MEDIR LA CARGA---------------------//
+
+  function medirCarga(callback, color) {
+
+    const contador = document.getElementById("contador-tiempo");
+let tiempoInicio = performance.now();
+
+// Mostrar mensaje de carga y aplicar estilos dinámicos
+contador.textContent = "Cargando...";
+contador.style.backgroundColor = color;
+contador.style.color = "#FFFFFF"; // Letras blancas
+
+
+  
+    // Envuelve el renderizado original para medir el tiempo real
+    const originalRender = renderizarTabla;
+  
+    renderizarTabla = function () {
+      originalRender(); // llama al original
+      let tiempoFin = performance.now();
+      let duracion = ((tiempoFin - tiempoInicio) / 1000).toFixed(2);
+      contador.textContent = `${duracion}s`;
+      renderizarTabla = originalRender; // restablece original
+    };
+  
+    callback(); // ejecuta función que carga datos
+  }
+

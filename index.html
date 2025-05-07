@@ -7,13 +7,32 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Lista de Facturas</h2>
-    <button onclick="cargarDatos(false)">Cargar Facturas (JSON local)</button>
-    <button onclick="cargarDatos(true)">Cargar Usuarios (API)</button>
+  <section>
+    <h2>Grilla</h2>
+    <div class="contenedor">
+
+        <!-- Columna Async -->
+        <div class="columna">
+          <div class="titulo">Async/Await</div>
+          <button class="async-btn" onclick="activarBoton(this); medirCarga(() => cargarDatos(false), '#4CAF50')">Cargar Facturas (JSON)</button>
+          <button class="async-btn" onclick="activarBoton(this); medirCarga(() => cargarDatos(true), '#4CAF50')">Cargar Usuarios (API)</button>
+        </div>
+      
+        <!-- Contador en el centro -->
+        <div class="columna" style="justify-content: center; text-align: center;">
+          <div class="titulo">Tiempo de Carga</div>
+          <div id="contador-tiempo" style="font-size: 24px; color: #333;">0.00s</div>
+        </div>
+      
+        <!-- Columna Promises -->
+        <div class="columna">
+          <div class="titulo">Promises (.then)</div>
+          <button class="promise-btn" onclick="activarBoton(this); medirCarga(() => cargarDatosConPromise(false), '#2196F3')">Cargar Facturas (JSON)</button>
+          <button class="promise-btn" onclick="activarBoton(this); medirCarga(() => cargarDatosConPromise(true), '#2196F3')">Cargar Usuarios (API)</button>
+        </div>
+      </div>
+      
     <div id="tabla-container"></div>
-
-
-
 <div>
     <label for="registrosPorPagina">Registros por página:</label>
     <select id="registrosPorPagina">
@@ -25,7 +44,7 @@
   
   <div id="tabla-container"></div>
   <div id="paginacion"></div>
-  
+</section>
 
 <script src="script.js"></script>
 </body>
