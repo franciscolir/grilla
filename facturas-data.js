@@ -1,0 +1,1018 @@
+export const facturas = {"facturas": [
+                {
+                  "numeroFactura": "FAC-001",
+                  "cliente": {
+                    "nombre": "Juan Pérez",
+                    "direccion": "Calle Falsa 123"
+                  },
+                  "fecha": "2025-04-01",
+                  "productos": [
+                    { "descripcion": "Laptop HP", "cantidad": 1, "precioUnitario": 850.00 },
+                    { "descripcion": "Mouse Inalámbrico", "cantidad": 2, "precioUnitario": 25.50 }
+                  ],
+                  "total": 901.00
+                },
+                {
+                  "numeroFactura": "FAC-002",
+                  "cliente": {
+                    "nombre": "María Gómez",
+                    "direccion": "Av. Siempre Viva 742"
+                  },
+                  "fecha": "2025-04-02",
+                  "productos": [
+                    { "descripcion": "Impresora Multifuncional", "cantidad": 1, "precioUnitario": 120.00 },
+                    { "descripcion": "Toner Negro", "cantidad": 1, "precioUnitario": 45.00 }
+                  ],
+                  "total": 165.00
+                },
+                {
+                  "numeroFactura": "FAC-003",
+                  "cliente": {
+                    "nombre": "Carlos López",
+                    "direccion": "Carrera 5 # 10-20"
+                  },
+                  "fecha": "2025-04-03",
+                  "productos": [
+                    { "descripcion": "Memoria USB 32GB", "cantidad": 5, "precioUnitario": 12.00 },
+                    { "descripcion": "Teclado Mecánico", "cantidad": 1, "precioUnitario": 75.00 }
+                  ],
+                  "total": 135.00
+                },
+                {
+                  "numeroFactura": "FAC-004",
+                  "cliente": {
+                    "nombre": "Ana Martínez",
+                    "direccion": "Calle 10 # 45-67"
+                  },
+                  "fecha": "2025-04-04",
+                  "productos": [
+                    { "descripcion": "Monitor LED 24\"", "cantidad": 1, "precioUnitario": 200.00 },
+                    { "descripcion": "Parlantes Estéreo", "cantidad": 1, "precioUnitario": 60.00 }
+                  ],
+                  "total": 260.00
+                },
+                {
+                  "numeroFactura": "FAC-005",
+                  "cliente": {
+                    "nombre": "Pedro Sánchez",
+                    "direccion": "Diagonal 20 # 12-34"
+                  },
+                  "fecha": "2025-04-05",
+                  "productos": [
+                    { "descripcion": "Silla Ergonómica", "cantidad": 1, "precioUnitario": 150.00 }
+                  ],
+                  "total": 150.00
+                },
+                {
+                  "numeroFactura": "FAC-006",
+                  "cliente": {
+                    "nombre": "Laura Torres",
+                    "direccion": "Plaza Mayor 12"
+                  },
+                  "fecha": "2025-04-06",
+                  "productos": [
+                    { "descripcion": "Mesa de Oficina", "cantidad": 1, "precioUnitario": 180.00 }
+                  ],
+                  "total": 180.00
+                },
+                {
+                  "numeroFactura": "FAC-007",
+                  "cliente": {
+                    "nombre": "Diego Ramírez",
+                    "direccion": "Calle Larga 987"
+                  },
+                  "fecha": "2025-04-07",
+                  "productos": [
+                    { "descripcion": "Monitor LED 24\"", "cantidad": 2, "precioUnitario": 200.00 }
+                  ],
+                  "total": 400.00
+                },
+                {
+                  "numeroFactura": "FAC-008",
+                  "cliente": {
+                    "nombre": "Sofía Díaz",
+                    "direccion": "Camino Real 45"
+                  },
+                  "fecha": "2025-04-08",
+                  "productos": [
+                    { "descripcion": "Teclado Mecánico", "cantidad": 2, "precioUnitario": 75.00 },
+                    { "descripcion": "Mouse Inalámbrico", "cantidad": 1, "precioUnitario": 25.50 }
+                  ],
+                  "total": 175.50
+                },
+                {
+                  "numeroFactura": "FAC-009",
+                  "cliente": {
+                    "nombre": "Javier Morales",
+                    "direccion": "Boulevard Norte 32"
+                  },
+                  "fecha": "2025-04-09",
+                  "productos": [
+                    { "descripcion": "Laptop HP", "cantidad": 1, "precioUnitario": 850.00 },
+                    { "descripcion": "Memoria USB 32GB", "cantidad": 3, "precioUnitario": 12.00 }
+                  ],
+                  "total": 886.00
+                },
+                {
+                  "numeroFactura": "FAC-010",
+                  "cliente": {
+                    "nombre": "Lucía Fernández",
+                    "direccion": "Avenida Central 567"
+                  },
+                  "fecha": "2025-04-10",
+                  "productos": [
+                    { "descripcion": "Impresora Multifuncional", "cantidad": 1, "precioUnitario": 120.00 },
+                    { "descripcion": "Toner Negro", "cantidad": 2, "precioUnitario": 45.00 }
+                  ],
+                  "total": 210.00
+                },
+                {
+                  "numeroFactura": "FAC-011",
+                  "cliente": {
+                    "nombre": "Juan Pérez",
+                    "direccion": "Calle Falsa 123"
+                  },
+                  "fecha": "2025-04-11",
+                  "productos": [
+                    { "descripcion": "Parlantes Estéreo", "cantidad": 1, "precioUnitario": 60.00 }
+                  ],
+                  "total": 60.00
+                },
+                {
+                  "numeroFactura": "FAC-012",
+                  "cliente": {
+                    "nombre": "María Gómez",
+                    "direccion": "Av. Siempre Viva 742"
+                  },
+                  "fecha": "2025-04-12",
+                  "productos": [
+                    { "descripcion": "Silla Ergonómica", "cantidad": 2, "precioUnitario": 150.00 }
+                  ],
+                  "total": 300.00
+                },
+                {
+                  "numeroFactura": "FAC-013",
+                  "cliente": {
+                    "nombre": "Carlos López",
+                    "direccion": "Carrera 5 # 10-20"
+                  },
+                  "fecha": "2025-04-13",
+                  "productos": [
+                    { "descripcion": "Mouse Inalámbrico", "cantidad": 4, "precioUnitario": 25.50 },
+                    { "descripcion": "Teclado Mecánico", "cantidad": 1, "precioUnitario": 75.00 }
+                  ],
+                  "total": 177.00
+                },
+                {
+                  "numeroFactura": "FAC-014",
+                  "cliente": {
+                    "nombre": "Ana Martínez",
+                    "direccion": "Calle 10 # 45-67"
+                  },
+                  "fecha": "2025-04-14",
+                  "productos": [
+                    { "descripcion": "Monitor LED 24\"", "cantidad": 1, "precioUnitario": 200.00 },
+                    { "descripcion": "Mesa de Oficina", "cantidad": 1, "precioUnitario": 180.00 }
+                  ],
+                  "total": 380.00
+                },
+                {
+                  "numeroFactura": "FAC-015",
+                  "cliente": {
+                    "nombre": "Pedro Sánchez",
+                    "direccion": "Diagonal 20 # 12-34"
+                  },
+                  "fecha": "2025-04-15",
+                  "productos": [
+                    { "descripcion": "Memoria USB 32GB", "cantidad": 10, "precioUnitario": 12.00 }
+                  ],
+                  "total": 120.00
+                },
+                {
+                  "numeroFactura": "FAC-016",
+                  "cliente": {
+                    "nombre": "Laura Torres",
+                    "direccion": "Plaza Mayor 12"
+                  },
+                  "fecha": "2025-04-16",
+                  "productos": [
+                    { "descripcion": "Laptop HP", "cantidad": 1, "precioUnitario": 850.00 },
+                    { "descripcion": "Mouse Inalámbrico", "cantidad": 1, "precioUnitario": 25.50 }
+                  ],
+                  "total": 875.50
+                },
+                {
+                  "numeroFactura": "FAC-017",
+                  "cliente": {
+                    "nombre": "Diego Ramírez",
+                    "direccion": "Calle Larga 987"
+                  },
+                  "fecha": "2025-04-17",
+                  "productos": [
+                    { "descripcion": "Impresora Multifuncional", "cantidad": 1, "precioUnitario": 120.00 },
+                    { "descripcion": "Toner Negro", "cantidad": 3, "precioUnitario": 45.00 }
+                  ],
+                  "total": 255.00
+                },
+                {
+                  "numeroFactura": "FAC-018",
+                  "cliente": {
+                    "nombre": "Sofía Díaz",
+                    "direccion": "Camino Real 45"
+                  },
+                  "fecha": "2025-04-18",
+                  "productos": [
+                    { "descripcion": "Memoria USB 32GB", "cantidad": 4, "precioUnitario": 12.00 }
+                  ],
+                  "total": 48.00
+                },
+                {
+                  "numeroFactura": "FAC-019",
+                  "cliente": {
+                    "nombre": "Javier Morales",
+                    "direccion": "Boulevard Norte 32"
+                  },
+                  "fecha": "2025-04-19",
+                  "productos": [
+                    { "descripcion": "Monitor LED 24\"", "cantidad": 2, "precioUnitario": 200.00 },
+                    { "descripcion": "Parlantes Estéreo", "cantidad": 1, "precioUnitario": 60.00 }
+                  ],
+                  "total": 460.00
+                },
+                {
+                  "numeroFactura": "FAC-020",
+                  "cliente": {
+                    "nombre": "Lucía Fernández",
+                    "direccion": "Avenida Central 567"
+                  },
+                  "fecha": "2025-04-20",
+                  "productos": [
+                    { "descripcion": "Teclado Mecánico", "cantidad": 3, "precioUnitario": 75.00 }
+                  ],
+                  "total": 225.00
+                },
+                {
+                  "numeroFactura": "FAC-021",
+                  "cliente": {
+                    "nombre": "Juan Pérez",
+                    "direccion": "Calle Falsa 123"
+                  },
+                  "fecha": "2025-04-21",
+                  "productos": [
+                    { "descripcion": "Silla Ergonómica", "cantidad": 1, "precioUnitario": 150.00 },
+                    { "descripcion": "Mesa de Oficina", "cantidad": 1, "precioUnitario": 180.00 }
+                  ],
+                  "total": 330.00
+                },
+                {
+                  "numeroFactura": "FAC-022",
+                  "cliente": {
+                    "nombre": "María Gómez",
+                    "direccion": "Av. Siempre Viva 742"
+                  },
+                  "fecha": "2025-04-22",
+                  "productos": [
+                    { "descripcion": "Mouse Inalámbrico", "cantidad": 2, "precioUnitario": 25.50 }
+                  ],
+                  "total": 51.00
+                },
+                {
+                  "numeroFactura": "FAC-023",
+                  "cliente": {
+                    "nombre": "Carlos López",
+                    "direccion": "Carrera 5 # 10-20"
+                  },
+                  "fecha": "2025-04-23",
+                  "productos": [
+                    { "descripcion": "Laptop HP", "cantidad": 1, "precioUnitario": 850.00 },
+                    { "descripcion": "Memoria USB 32GB", "cantidad": 2, "precioUnitario": 12.00 }
+                  ],
+                  "total": 874.00
+                },
+                {
+                  "numeroFactura": "FAC-024",
+                  "cliente": {
+                    "nombre": "Ana Martínez",
+                    "direccion": "Calle 10 # 45-67"
+                  },
+                  "fecha": "2025-04-24",
+                  "productos": [
+                    { "descripcion": "Impresora Multifuncional", "cantidad": 1, "precioUnitario": 120.00 },
+                    { "descripcion": "Toner Negro", "cantidad": 1, "precioUnitario": 45.00 },
+                    { "descripcion": "Parlantes Estéreo", "cantidad": 1, "precioUnitario": 60.00 }
+                  ],
+                  "total": 225.00
+                },
+                {
+                  "numeroFactura": "FAC-025",
+                  "cliente": {
+                    "nombre": "Pedro Sánchez",
+                    "direccion": "Diagonal 20 # 12-34"
+                  },
+                  "fecha": "2025-04-25",
+                  "productos": [
+                    { "descripcion": "Monitor LED 24\"", "cantidad": 1, "precioUnitario": 200.00 },
+                    { "descripcion": "Teclado Mecánico", "cantidad": 2, "precioUnitario": 75.00 }
+                  ],
+                  "total": 350.00
+                },
+                {
+                  "numeroFactura": "FAC-026",
+                  "cliente": {
+                    "nombre": "Laura Torres",
+                    "direccion": "Plaza Mayor 12"
+                  },
+                  "fecha": "2025-04-26",
+                  "productos": [
+                    { "descripcion": "Mesa de Oficina", "cantidad": 2, "precioUnitario": 180.00 }
+                  ],
+                  "total": 360.00
+                },
+                {
+                  "numeroFactura": "FAC-027",
+                  "cliente": {
+                    "nombre": "Diego Ramírez",
+                    "direccion": "Calle Larga 987"
+                  },
+                  "fecha": "2025-04-27",
+                  "productos": [
+                    { "descripcion": "Teclado Mecánico", "cantidad": 1, "precioUnitario": 75.00 },
+                    { "descripcion": "Mouse Inalámbrico", "cantidad": 3, "precioUnitario": 25.50 }
+                  ],
+                  "total": 151.50
+                },
+                {
+                  "numeroFactura": "FAC-028",
+                  "cliente": {
+                    "nombre": "Sofía Díaz",
+                    "direccion": "Camino Real 45"
+                  },
+                  "fecha": "2025-04-28",
+                  "productos": [
+                    { "descripcion": "Laptop HP", "cantidad": 1, "precioUnitario": 850.00 },
+                    { "descripcion": "Memoria USB 32GB", "cantidad": 4, "precioUnitario": 12.00 }
+                  ],
+                  "total": 898.00
+                },
+                {
+                  "numeroFactura": "FAC-029",
+                  "cliente": {
+                    "nombre": "Javier Morales",
+                    "direccion": "Boulevard Norte 32"
+                  },
+                  "fecha": "2025-04-29",
+                  "productos": [
+                    { "descripcion": "Impresora Multifuncional", "cantidad": 1, "precioUnitario": 120.00 },
+                    { "descripcion": "Toner Negro", "cantidad": 2, "precioUnitario": 45.00 }
+                  ],
+                  "total": 210.00
+                },
+                {
+                  "numeroFactura": "FAC-030",
+                  "cliente": {
+                    "nombre": "Lucía Fernández",
+                    "direccion": "Avenida Central 567"
+                  },
+                  "fecha": "2025-04-30",
+                  "productos": [
+                    { "descripcion": "Monitor LED 24\"", "cantidad": 3, "precioUnitario": 200.00 }
+                  ],
+                  "total": 600.00
+                },
+                                    {
+                      "numeroFactura": "FAC-031",
+                      "cliente": { "nombre": "Carlos Ruiz", "direccion": "Calle Roble 123" },
+                      "fecha": "2025-04-28",
+                      "productos": [
+                        { "descripcion": "Teclado Mecánico", "cantidad": 1, "precioUnitario": 120.00 }
+                      ],
+                      "total": 120.00
+                    },
+                    {
+                      "numeroFactura": "FAC-032",
+                      "cliente": { "nombre": "María López", "direccion": "Av. del Sol 45" },
+                      "fecha": "2025-04-28",
+                      "productos": [
+                        { "descripcion": "Mouse Inalámbrico", "cantidad": 2, "precioUnitario": 35.00 }
+                      ],
+                      "total": 70.00
+                    },
+                    {
+                      "numeroFactura": "FAC-033",
+                      "cliente": { "nombre": "Pedro Sánchez", "direccion": "Boulevard Norte 888" },
+                      "fecha": "2025-04-29",
+                      "productos": [
+                        { "descripcion": "Laptop 15\"", "cantidad": 1, "precioUnitario": 950.00 }
+                      ],
+                      "total": 950.00
+                    },
+                    {
+                      "numeroFactura": "FAC-034",
+                      "cliente": { "nombre": "Ana Torres", "direccion": "Callejón del Arte 17" },
+                      "fecha": "2025-04-29",
+                      "productos": [
+                        { "descripcion": "Tablet 10\"", "cantidad": 2, "precioUnitario": 300.00 }
+                      ],
+                      "total": 600.00
+                    },
+                    {
+                      "numeroFactura": "FAC-035",
+                      "cliente": { "nombre": "Luis Martínez", "direccion": "Av. Libertad 99" },
+                      "fecha": "2025-04-30",
+                      "productos": [
+                        { "descripcion": "Impresora Multifunción", "cantidad": 1, "precioUnitario": 250.00 }
+                      ],
+                      "total": 250.00
+                    },
+                    {
+                      "numeroFactura": "FAC-036",
+                      "cliente": { "nombre": "Carmen Vega", "direccion": "Pasaje Primavera 2" },
+                      "fecha": "2025-04-30",
+                      "productos": [
+                        { "descripcion": "Router Wi-Fi", "cantidad": 1, "precioUnitario": 90.00 },
+                        { "descripcion": "Cable Ethernet 5m", "cantidad": 2, "precioUnitario": 10.00 }
+                      ],
+                      "total": 110.00
+                    },
+                    {
+                      "numeroFactura": "FAC-037",
+                      "cliente": { "nombre": "Daniela Paredes", "direccion": "Camino Verde 321" },
+                      "fecha": "2025-05-01",
+                      "productos": [
+                        { "descripcion": "Auriculares Bluetooth", "cantidad": 1, "precioUnitario": 85.00 }
+                      ],
+                      "total": 85.00
+                    },
+                    {
+                      "numeroFactura": "FAC-038",
+                      "cliente": { "nombre": "Jorge Castillo", "direccion": "Ruta 5 Sur Km 12" },
+                      "fecha": "2025-05-01",
+                      "productos": [
+                        { "descripcion": "Cámara Web HD", "cantidad": 1, "precioUnitario": 70.00 },
+                        { "descripcion": "Lámpara LED escritorio", "cantidad": 1, "precioUnitario": 25.00 }
+                      ],
+                      "total": 95.00
+                    },
+                    {
+                      "numeroFactura": "FAC-039",
+                      "cliente": { "nombre": "Elena Ramírez", "direccion": "Av. Siempre Viva 742" },
+                      "fecha": "2025-05-02",
+                      "productos": [
+                        { "descripcion": "SSD 1TB", "cantidad": 1, "precioUnitario": 130.00 }
+                      ],
+                      "total": 130.00
+                    },
+                    {
+                      "numeroFactura": "FAC-040",
+                      "cliente": { "nombre": "Fernando Gutiérrez", "direccion": "Calle del Río 10" },
+                      "fecha": "2025-05-02",
+                      "productos": [
+                        { "descripcion": "Monitor 27\" UHD", "cantidad": 1, "precioUnitario": 320.00 }
+                      ],
+                      "total": 320.00
+                    },
+                        {
+                          "numeroFactura": "FAC-041",
+                          "cliente": { "nombre": "Laura García", "direccion": "Calle de la Paz 56" },
+                          "fecha": "2025-05-03",
+                          "productos": [
+                            { "descripcion": "Smartphone 128GB", "cantidad": 1, "precioUnitario": 450.00 }
+                          ],
+                          "total": 450.00
+                        },
+                        {
+                          "numeroFactura": "FAC-042",
+                          "cliente": { "nombre": "Javier Martínez", "direccion": "Calle del Mar 78" },
+                          "fecha": "2025-05-03",
+                          "productos": [
+                            { "descripcion": "Audífonos In-Ear", "cantidad": 1, "precioUnitario": 35.00 }
+                          ],
+                          "total": 35.00
+                        },
+                        {
+                          "numeroFactura": "FAC-043",
+                          "cliente": { "nombre": "Marta Hernández", "direccion": "Av. Los Pinos 234" },
+                          "fecha": "2025-05-04",
+                          "productos": [
+                            { "descripcion": "Bocina Bluetooth", "cantidad": 2, "precioUnitario": 45.00 }
+                          ],
+                          "total": 90.00
+                        },
+                        {
+                          "numeroFactura": "FAC-044",
+                          "cliente": { "nombre": "Alberto Rodríguez", "direccion": "Plaza Central 11" },
+                          "fecha": "2025-05-04",
+                          "productos": [
+                            { "descripcion": "Pantalla LED 32\"", "cantidad": 1, "precioUnitario": 220.00 }
+                          ],
+                          "total": 220.00
+                        },
+                        {
+                          "numeroFactura": "FAC-045",
+                          "cliente": { "nombre": "Beatriz Pérez", "direccion": "Calle Azul 87" },
+                          "fecha": "2025-05-05",
+                          "productos": [
+                            { "descripcion": "Cargador Inalámbrico", "cantidad": 3, "precioUnitario": 20.00 }
+                          ],
+                          "total": 60.00
+                        },
+                        {
+                          "numeroFactura": "FAC-046",
+                          "cliente": { "nombre": "Luis Hernández", "direccion": "Av. Libertador 23" },
+                          "fecha": "2025-05-05",
+                          "productos": [
+                            { "descripcion": "Cámara Digital 16MP", "cantidad": 1, "precioUnitario": 150.00 }
+                          ],
+                          "total": 150.00
+                        },
+                        {
+                          "numeroFactura": "FAC-047",
+                          "cliente": { "nombre": "José Gómez", "direccion": "Calle Mayor 4" },
+                          "fecha": "2025-05-06",
+                          "productos": [
+                            { "descripcion": "Silla Ergonómica", "cantidad": 1, "precioUnitario": 180.00 }
+                          ],
+                          "total": 180.00
+                        },
+                        {
+                          "numeroFactura": "FAC-048",
+                          "cliente": { "nombre": "Sandra López", "direccion": "Calle de la Estrella 32" },
+                          "fecha": "2025-05-06",
+                          "productos": [
+                            { "descripcion": "Memoria RAM 16GB", "cantidad": 1, "precioUnitario": 85.00 }
+                          ],
+                          "total": 85.00
+                        },
+                        {
+                          "numeroFactura": "FAC-049",
+                          "cliente": { "nombre": "Ricardo Fernández", "direccion": "Av. del Norte 91" },
+                          "fecha": "2025-05-07",
+                          "productos": [
+                            { "descripcion": "Disco Duro Externo 2TB", "cantidad": 1, "precioUnitario": 95.00 }
+                          ],
+                          "total": 95.00
+                        },
+                        {
+                          "numeroFactura": "FAC-050",
+                          "cliente": { "nombre": "Patricia Morales", "direccion": "Calle del Río 67" },
+                          "fecha": "2025-05-07",
+                          "productos": [
+                            { "descripcion": "Mochila para Laptop", "cantidad": 2, "precioUnitario": 50.00 }
+                          ],
+                          "total": 100.00
+                        },
+                        {
+                          "numeroFactura": "FAC-051",
+                          "cliente": { "nombre": "Andrés García", "direccion": "Calle Fuerte 22" },
+                          "fecha": "2025-05-08",
+                          "productos": [
+                            { "descripcion": "Smartwatch Deportivo", "cantidad": 1, "precioUnitario": 150.00 }
+                          ],
+                          "total": 150.00
+                        },
+                        {
+                          "numeroFactura": "FAC-052",
+                          "cliente": { "nombre": "Raquel Díaz", "direccion": "Av. de las Flores 56" },
+                          "fecha": "2025-05-08",
+                          "productos": [
+                            { "descripcion": "Laptop 13\" Ultraligera", "cantidad": 1, "precioUnitario": 850.00 }
+                          ],
+                          "total": 850.00
+                        },
+                        {
+                          "numeroFactura": "FAC-053",
+                          "cliente": { "nombre": "Fernando Ruiz", "direccion": "Calle Nueva 47" },
+                          "fecha": "2025-05-09",
+                          "productos": [
+                            { "descripcion": "Bicicleta Eléctrica", "cantidad": 1, "precioUnitario": 1200.00 }
+                          ],
+                          "total": 1200.00
+                        },
+                        {
+                          "numeroFactura": "FAC-054",
+                          "cliente": { "nombre": "Ana García", "direccion": "Calle Mayor 98" },
+                          "fecha": "2025-05-09",
+                          "productos": [
+                            { "descripcion": "Proyector 4K", "cantidad": 1, "precioUnitario": 550.00 }
+                          ],
+                          "total": 550.00
+                        },
+                        {
+                          "numeroFactura": "FAC-055",
+                          "cliente": { "nombre": "Carlos Pérez", "direccion": "Calle del Sol 33" },
+                          "fecha": "2025-05-10",
+                          "productos": [
+                            { "descripcion": "Auriculares Noise Cancelling", "cantidad": 2, "precioUnitario": 120.00 }
+                          ],
+                          "total": 240.00
+                        },
+                        {
+                          "numeroFactura": "FAC-056",
+                          "cliente": { "nombre": "Joaquín Martínez", "direccion": "Av. Principal 65" },
+                          "fecha": "2025-05-10",
+                          "productos": [
+                            { "descripcion": "Silla Gaming", "cantidad": 1, "precioUnitario": 200.00 }
+                          ],
+                          "total": 200.00
+                        },
+                        {
+                          "numeroFactura": "FAC-057",
+                          "cliente": { "nombre": "Esther Sánchez", "direccion": "Calle Real 11" },
+                          "fecha": "2025-05-11",
+                          "productos": [
+                            { "descripcion": "Cámara de Seguridad", "cantidad": 3, "precioUnitario": 65.00 }
+                          ],
+                          "total": 195.00
+                        },
+                        {
+                          "numeroFactura": "FAC-058",
+                          "cliente": { "nombre": "David Castro", "direccion": "Calle del Parque 23" },
+                          "fecha": "2025-05-11",
+                          "productos": [
+                            { "descripcion": "Altavoces 2.1", "cantidad": 1, "precioUnitario": 80.00 }
+                          ],
+                          "total": 80.00
+                        },
+                        {
+                          "numeroFactura": "FAC-059",
+                          "cliente": { "nombre": "Mónica García", "direccion": "Calle de los Nogales 45" },
+                          "fecha": "2025-05-12",
+                          "productos": [
+                            { "descripcion": "Termo Eléctrico", "cantidad": 1, "precioUnitario": 60.00 }
+                          ],
+                          "total": 60.00
+                        },
+                        {
+                          "numeroFactura": "FAC-060",
+                          "cliente": { "nombre": "Víctor Ramírez", "direccion": "Calle del Cielo 13" },
+                          "fecha": "2025-05-12",
+                          "productos": [
+                            { "descripcion": "Smartphone 64GB", "cantidad": 1, "precioUnitario": 380.00 }
+                          ],
+                          "total": 380.00
+                        },
+
+                        
+                            {
+                              "numeroFactura": "FAC-061",
+                              "cliente": { "nombre": "Juan Pérez", "direccion": "Calle de la Luna 14" },
+                              "fecha": "2025-05-13",
+                              "productos": [
+                                { "descripcion": "Cámara Deportiva", "cantidad": 1, "precioUnitario": 120.00 }
+                              ],
+                              "total": 120.00
+                            },
+                            {
+                              "numeroFactura": "FAC-062",
+                              "cliente": { "nombre": "Lucía Rodríguez", "direccion": "Calle del Sol 23" },
+                              "fecha": "2025-05-13",
+                              "productos": [
+                                { "descripcion": "Monitor Curvo 24\"", "cantidad": 1, "precioUnitario": 220.00 }
+                              ],
+                              "total": 220.00
+                            },
+                            {
+                              "numeroFactura": "FAC-063",
+                              "cliente": { "nombre": "Marcela Gómez", "direccion": "Calle Azul 3" },
+                              "fecha": "2025-05-14",
+                              "productos": [
+                                { "descripcion": "Teclado Inalámbrico", "cantidad": 1, "precioUnitario": 80.00 }
+                              ],
+                              "total": 80.00
+                            },
+                            {
+                              "numeroFactura": "FAC-064",
+                              "cliente": { "nombre": "Ricardo Torres", "direccion": "Calle del Mar 55" },
+                              "fecha": "2025-05-14",
+                              "productos": [
+                                { "descripcion": "Altavoz Bluetooth", "cantidad": 2, "precioUnitario": 40.00 }
+                              ],
+                              "total": 80.00
+                            },
+                            {
+                              "numeroFactura": "FAC-065",
+                              "cliente": { "nombre": "Laura López", "direccion": "Calle de la Montaña 7" },
+                              "fecha": "2025-05-15",
+                              "productos": [
+                                { "descripcion": "Smartphone 64GB", "cantidad": 1, "precioUnitario": 350.00 }
+                              ],
+                              "total": 350.00
+                            },
+                            {
+                              "numeroFactura": "FAC-066",
+                              "cliente": { "nombre": "Elena Castro", "direccion": "Calle Cielo 12" },
+                              "fecha": "2025-05-15",
+                              "productos": [
+                                { "descripcion": "Mochila Impermeable", "cantidad": 1, "precioUnitario": 45.00 }
+                              ],
+                              "total": 45.00
+                            },
+                            {
+                              "numeroFactura": "FAC-067",
+                              "cliente": { "nombre": "Antonio López", "direccion": "Calle San Martín 29" },
+                              "fecha": "2025-05-16",
+                              "productos": [
+                                { "descripcion": "Disco Duro 1TB", "cantidad": 1, "precioUnitario": 60.00 }
+                              ],
+                              "total": 60.00
+                            },
+                            {
+                              "numeroFactura": "FAC-068",
+                              "cliente": { "nombre": "Carlos Sánchez", "direccion": "Calle Mayor 64" },
+                              "fecha": "2025-05-16",
+                              "productos": [
+                                { "descripcion": "Cámara Fotográfica 24MP", "cantidad": 1, "precioUnitario": 500.00 }
+                              ],
+                              "total": 500.00
+                            },
+                            {
+                              "numeroFactura": "FAC-069",
+                              "cliente": { "nombre": "Alicia Martínez", "direccion": "Calle del Rio 42" },
+                              "fecha": "2025-05-17",
+                              "productos": [
+                                { "descripcion": "Laptop 15\"", "cantidad": 1, "precioUnitario": 800.00 }
+                              ],
+                              "total": 800.00
+                            },
+                            {
+                              "numeroFactura": "FAC-070",
+                              "cliente": { "nombre": "David González", "direccion": "Calle Palma 56" },
+                              "fecha": "2025-05-17",
+                              "productos": [
+                                { "descripcion": "Microondas Digital", "cantidad": 1, "precioUnitario": 150.00 }
+                              ],
+                              "total": 150.00
+                            },
+                            {
+                              "numeroFactura": "FAC-071",
+                              "cliente": { "nombre": "Pedro Fernández", "direccion": "Calle Alta 9" },
+                              "fecha": "2025-05-18",
+                              "productos": [
+                                { "descripcion": "Robot Aspiradora", "cantidad": 1, "precioUnitario": 230.00 }
+                              ],
+                              "total": 230.00
+                            },
+                            {
+                              "numeroFactura": "FAC-072",
+                              "cliente": { "nombre": "Sofía Pérez", "direccion": "Calle de las Flores 21" },
+                              "fecha": "2025-05-18",
+                              "productos": [
+                                { "descripcion": "Proyector 1080p", "cantidad": 1, "precioUnitario": 350.00 }
+                              ],
+                              "total": 350.00
+                            },
+                            {
+                              "numeroFactura": "FAC-073",
+                              "cliente": { "nombre": "José Sánchez", "direccion": "Av. del Sol 18" },
+                              "fecha": "2025-05-19",
+                              "productos": [
+                                { "descripcion": "Termo de Acero Inoxidable", "cantidad": 1, "precioUnitario": 25.00 }
+                              ],
+                              "total": 25.00
+                            },
+                            {
+                              "numeroFactura": "FAC-074",
+                              "cliente": { "nombre": "Raúl Rodríguez", "direccion": "Calle Palmera 13" },
+                              "fecha": "2025-05-19",
+                              "productos": [
+                                { "descripcion": "Estabilizador de Voltaje", "cantidad": 1, "precioUnitario": 70.00 }
+                              ],
+                              "total": 70.00
+                            },
+                            {
+                              "numeroFactura": "FAC-075",
+                              "cliente": { "nombre": "Rosa Martínez", "direccion": "Calle del Arco 90" },
+                              "fecha": "2025-05-20",
+                              "productos": [
+                                { "descripcion": "Aspiradora Robot", "cantidad": 1, "precioUnitario": 180.00 }
+                              ],
+                              "total": 180.00
+                            },
+                            {
+                              "numeroFactura": "FAC-076",
+                              "cliente": { "nombre": "Francisco López", "direccion": "Av. Los Pinos 33" },
+                              "fecha": "2025-05-20",
+                              "productos": [
+                                { "descripcion": "Pantalla LED 50\"", "cantidad": 1, "precioUnitario": 450.00 }
+                              ],
+                              "total": 450.00
+                            },
+                            {
+                              "numeroFactura": "FAC-077",
+                              "cliente": { "nombre": "Beatriz González", "direccion": "Calle Verde 16" },
+                              "fecha": "2025-05-21",
+                              "productos": [
+                                { "descripcion": "Gafas VR", "cantidad": 1, "precioUnitario": 120.00 }
+                              ],
+                              "total": 120.00
+                            },
+                            
+                            {
+                                "numeroFactura": "FAC-078",
+                                "cliente": { "nombre": "Antonio Pérez", "direccion": "Calle Larga 24" },
+                                "fecha": "2025-05-21",
+                                "productos": [
+                                  { "descripcion": "Disco Duro 2TB", "cantidad": 1, "precioUnitario": 110.00 }
+                                ],
+                                "total": 110.00
+                              },
+                              {
+                                "numeroFactura": "FAC-079",
+                                "cliente": { "nombre": "Cristina Hernández", "direccion": "Calle Roble 7" },
+                                "fecha": "2025-05-22",
+                                "productos": [
+                                  { "descripcion": "Cámara de Seguridad Wi-Fi", "cantidad": 1, "precioUnitario": 90.00 }
+                                ],
+                                "total": 90.00
+                              },
+                              {
+                                "numeroFactura": "FAC-080",
+                                "cliente": { "nombre": "Luis García", "direccion": "Calle del Lago 39" },
+                                "fecha": "2025-05-22",
+                                "productos": [
+                                  { "descripcion": "Alfombrilla para Oficina", "cantidad": 1, "precioUnitario": 35.00 }
+                                ],
+                                "total": 35.00
+                              },
+                              {
+                                "numeroFactura": "FAC-081",
+                                "cliente": { "nombre": "Carla López", "direccion": "Av. del Río 55" },
+                                "fecha": "2025-05-23",
+                                "productos": [
+                                  { "descripcion": "Cargador Rápido", "cantidad": 2, "precioUnitario": 30.00 }
+                                ],
+                                "total": 60.00
+                              },
+                              {
+                                "numeroFactura": "FAC-082",
+                                "cliente": { "nombre": "Gerardo Martínez", "direccion": "Calle Real 12" },
+                                "fecha": "2025-05-23",
+                                "productos": [
+                                  { "descripcion": "Monitor LED 22\"", "cantidad": 1, "precioUnitario": 150.00 }
+                                ],
+                                "total": 150.00
+                              },
+                              {
+                                "numeroFactura": "FAC-083",
+                                "cliente": { "nombre": "José María Sánchez", "direccion": "Calle de la Luna 14" },
+                                "fecha": "2025-05-24",
+                                "productos": [
+                                  { "descripcion": "Tablet 10\"", "cantidad": 1, "precioUnitario": 270.00 }
+                                ],
+                                "total": 270.00
+                              },
+                              {
+                                "numeroFactura": "FAC-084",
+                                "cliente": { "nombre": "Marta Pérez", "direccion": "Calle de la Sierra 20" },
+                                "fecha": "2025-05-24",
+                                "productos": [
+                                  { "descripcion": "Smartwatch", "cantidad": 1, "precioUnitario": 110.00 }
+                                ],
+                                "total": 110.00
+                              },
+                              {
+                                "numeroFactura": "FAC-085",
+                                "cliente": { "nombre": "Miguel Díaz", "direccion": "Calle de la Estrella 39" },
+                                "fecha": "2025-05-25",
+                                "productos": [
+                                  { "descripcion": "Auriculares Gaming", "cantidad": 1, "precioUnitario": 80.00 }
+                                ],
+                                "total": 80.00
+                              },
+                                  {
+                                  "numeroFactura": "FAC-086",
+                                  "cliente": { "nombre": "Antonio Ramírez", "direccion": "Calle de los Olivos 19" },
+                                  "fecha": "2025-05-26",
+                                  "productos": [
+                                    { "descripcion": "Proyector 4K", "cantidad": 1, "precioUnitario": 600.00 }
+                                  ],
+                                  "total": 600.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-087",
+                                  "cliente": { "nombre": "Lucía Fernández", "direccion": "Calle Nueva 45" },
+                                  "fecha": "2025-05-26",
+                                  "productos": [
+                                    { "descripcion": "Teclado Mecánico", "cantidad": 1, "precioUnitario": 100.00 }
+                                  ],
+                                  "total": 100.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-088",
+                                  "cliente": { "nombre": "Carlos Sánchez", "direccion": "Calle Central 31" },
+                                  "fecha": "2025-05-27",
+                                  "productos": [
+                                    { "descripcion": "Bocina de Alta Fidelidad", "cantidad": 2, "precioUnitario": 150.00 }
+                                  ],
+                                  "total": 300.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-089",
+                                  "cliente": { "nombre": "Sofía Torres", "direccion": "Calle Cumbres 4" },
+                                  "fecha": "2025-05-27",
+                                  "productos": [
+                                    { "descripcion": "Tableta Android 10\"", "cantidad": 1, "precioUnitario": 200.00 }
+                                  ],
+                                  "total": 200.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-090",
+                                  "cliente": { "nombre": "José López", "direccion": "Calle de los Árboles 8" },
+                                  "fecha": "2025-05-28",
+                                  "productos": [
+                                    { "descripcion": "Smartphone 128GB", "cantidad": 1, "precioUnitario": 400.00 }
+                                  ],
+                                  "total": 400.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-091",
+                                  "cliente": { "nombre": "Patricia González", "direccion": "Av. del Río 50" },
+                                  "fecha": "2025-05-28",
+                                  "productos": [
+                                    { "descripcion": "Cargador Inalámbrico", "cantidad": 2, "precioUnitario": 30.00 }
+                                  ],
+                                  "total": 60.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-092",
+                                  "cliente": { "nombre": "Pedro Fernández", "direccion": "Calle San José 77" },
+                                  "fecha": "2025-05-29",
+                                  "productos": [
+                                    { "descripcion": "Altavoces 2.1", "cantidad": 1, "precioUnitario": 120.00 }
+                                  ],
+                                  "total": 120.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-093",
+                                  "cliente": { "nombre": "Alberto García", "direccion": "Calle Los Naranjos 20" },
+                                  "fecha": "2025-05-29",
+                                  "productos": [
+                                    { "descripcion": "Cámara Digital 10MP", "cantidad": 1, "precioUnitario": 150.00 }
+                                  ],
+                                  "total": 150.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-094",
+                                  "cliente": { "nombre": "Clara Rodríguez", "direccion": "Calle de los Abetos 9" },
+                                  "fecha": "2025-05-30",
+                                  "productos": [
+                                    { "descripcion": "Laptop 14\" Ultrafina", "cantidad": 1, "precioUnitario": 850.00 }
+                                  ],
+                                  "total": 850.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-095",
+                                  "cliente": { "nombre": "Raúl Martínez", "direccion": "Calle Colón 34" },
+                                  "fecha": "2025-05-30",
+                                  "productos": [
+                                    { "descripcion": "Auriculares Bluetooth", "cantidad": 2, "precioUnitario": 80.00 }
+                                  ],
+                                  "total": 160.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-096",
+                                  "cliente": { "nombre": "José Martín", "direccion": "Calle Libertad 33" },
+                                  "fecha": "2025-05-31",
+                                  "productos": [
+                                    { "descripcion": "Cargador Solar", "cantidad": 1, "precioUnitario": 50.00 }
+                                  ],
+                                  "total": 50.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-097",
+                                  "cliente": { "nombre": "Luis Herrera", "direccion": "Calle de los Girasoles 15" },
+                                  "fecha": "2025-05-31",
+                                  "productos": [
+                                    { "descripcion": "Cámara de Seguridad IP", "cantidad": 1, "precioUnitario": 120.00 }
+                                  ],
+                                  "total": 120.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-098",
+                                  "cliente": { "nombre": "Esther López", "direccion": "Calle Los Pinos 45" },
+                                  "fecha": "2025-06-01",
+                                  "productos": [
+                                    { "descripcion": "Smartwatch Deportivo", "cantidad": 1, "precioUnitario": 130.00 }
+                                  ],
+                                  "total": 130.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-099",
+                                  "cliente": { "nombre": "Raúl Pérez", "direccion": "Calle Príncipe 11" },
+                                  "fecha": "2025-06-01",
+                                  "productos": [
+                                    { "descripcion": "Smartphone 256GB", "cantidad": 1, "precioUnitario": 550.00 }
+                                  ],
+                                  "total": 550.00
+                                },
+                                {
+                                  "numeroFactura": "FAC-100",
+                                  "cliente": { "nombre": "Marta Sánchez", "direccion": "Calle Valle 7" },
+                                  "fecha": "2025-06-02",
+                                  "productos": [
+                                    { "descripcion": "Proyector LED", "cantidad": 1, "precioUnitario": 180.00 }
+                                  ],
+                                  "total": 180.00
+                                }
+                                 
+              ]}

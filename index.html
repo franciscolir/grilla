@@ -11,12 +11,14 @@
     <h2>Grilla de Data con filtro</h2>
     <div class="contenedor">
 
-        <!-- Columna Async -->
-        <div class="columna">
-          <div class="titulo">Async/Await</div>
-          <button class="async-btn" onclick="activarBoton(this); medirCarga(() => cargarDatos(false), '#4CAF50')">Cargar Data (JSON)</button>
-          <button class="async-btn" onclick="activarBoton(this); medirCarga(() => cargarDatos(true), '#4CAF50')">Cargar Data (API)</button>
-        </div>
+    <!-- Columna Async -->
+<div class="columna">
+  <div class="titulo">Async/Await</div>
+  <button class="async-btn" data-boton="1">Cargar Data (API)</button>
+  <button class="async-btn" data-boton="2">Cargar Data (JSON)</button>
+  <button class="async-btn" data-boton="3">Cargar Data (DATA.JS)</button>
+</div>
+
       
         <!-- Contador en el centro -->
         <div class="columna" style="justify-content: center; text-align: center;">
@@ -27,8 +29,9 @@
         <!-- Columna Promises -->
         <div class="columna">
           <div class="titulo">Promises (.then)</div>
-          <button class="promise-btn" onclick="activarBoton(this); medirCarga(() => cargarDatosConPromise(false), '#2196F3')">Cargar Data (JSON)</button>
-          <button class="promise-btn" onclick="activarBoton(this); medirCarga(() => cargarDatosConPromise(true), '#2196F3')">Cargar Data (API)</button>
+          <button class="promise-btn" data-boton=1>Cargar Data (API)</button>
+          <button class="promise-btn" data-boton=2>Cargar Data (JSON)</button>
+          <button class="promise-btn" data-boton=3>Cargar Data (DATA.JS)</button>
         </div>
       </div>
       
@@ -46,6 +49,6 @@
   <div id="paginacion"></div>
 </section>
 
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 </html>

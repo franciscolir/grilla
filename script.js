@@ -1,3 +1,10 @@
+// main.js (o el archivo donde quieras usar los datos)
+
+import { facturas } from './facturas-data.js';
+
+//console.log("Facturas cargadas:", facturas);
+
+
 let paginaActual = 1;
 let registrosPorPagina = 10;
 let facturasGlobal = [];
@@ -8,9 +15,6 @@ document.getElementById("registrosPorPagina").addEventListener("change", () => {
   paginaActual = 1;
   renderizarTabla();
 });
-
-
-
 
 //----------------------ASYNC-AWAIT FUNCTION---------------------------//
 
@@ -23,51 +27,59 @@ async function obtenerDatosAPI() {
       if (!respuesta.ok) throw new Error("No se pudo cargar el archivo facturas.json");
   
       const datos = await respuesta.json();
-      console.log("datos ", datos)
+      //console.log("datos ", datos)
       return datos;
     } catch (error) {
       console.error("Error al obtener datos de la API simulada:", error);
       return { usuarios: [] }; // manejar error devolviendo array vacío
     }
   }
-  
-  async function obtenerDatosJSON() {
-    try {
-          // Simular un retraso de 2 segundos
-    await new Promise(resolve => setTimeout(resolve, 1000));
 
-      const respuesta = await fetch('facturas.json');
-      if (!respuesta.ok) throw new Error("No se pudo cargar el archivo facturas.json");
+  async function obtenerDatosJSON(usarJS = false) {
+    try {
+      // Simular un retraso de 1 segundo
+      await new Promise(resolve => setTimeout(resolve, 1000));
   
-      const datos = await respuesta.json();
-      console.log("datos ", datos)
-      return datos;
+      if (usarJS) {
+       //Cargar datos desde facturas.json
+        const respuesta = await fetch('facturas.json');
+        if (!respuesta.ok) throw new Error("No se pudo cargar facturas.json");
+        const datos = await respuesta.json();
+        //console.log("datos desde JSON:", datos);
+        return datos;
+      } else {
+        //Cargar datos desde facturas-data.js
+        //console.log("datos desde JS:", facturas);
+        return facturas.facturas; //llamar a variable importada y entrando a json
+      }
+  
     } catch (error) {
-      console.error("Error al obtener datos de la API simulada:", error);
-      return { facturas: [] }; // manejar error devolviendo array vacío
+      console.error("Error al obtener datos:", error);
+      return { facturas: [] };
     }
   }
-
-
-  
+    
   document.getElementById("registrosPorPagina").addEventListener("change", () => {
     registrosPorPagina = parseInt(document.getElementById("registrosPorPagina").value);
     paginaActual = 1;
     renderizarTabla();
   });
   
-  async function cargarDatos(usarAPI = false) {
+  async function cargarDatos(boton) {
     try {
       
-      if (usarAPI){
+      if (boton==1){
         const respuesta = await obtenerDatosAPI();
         facturasGlobal = respuesta || [];
 
-      }else{
-
-        const respuesta = await obtenerDatosJSON();
+      }else if(boton==2) {
+        const respuesta = await obtenerDatosJSON(true);
         facturasGlobal = respuesta.facturas || [];
-    
+        
+      }else {
+        const respuesta = await obtenerDatosJSON(false);
+        facturasGlobal = respuesta || [];
+        
       }
   
       if (facturasGlobal.length === 0) {
@@ -85,10 +97,6 @@ async function obtenerDatosAPI() {
 //------------------------------------------------------------//
 
 
-
-
-
-
 //------------------PROMISE FUNCTION---------------------------//
 function obtenerDatosAPIConPromise() {
   // Simulamos una función que devuelve una Promesa sin usar async/await
@@ -100,61 +108,83 @@ function obtenerDatosAPIConPromise() {
       return respuesta.json();
     })
     .then(datos => {
-      console.log("datos", datos);
-      return { usuarios: datos };
+      //console.log("datos", datos);
+      return  datos;
     })
     .catch(error => {
       console.error("Error al obtener datos de la API simulada:", error);
-      return { usuarios: [] };
+      return error;
     });
 }
 
-function obtenerDatosJSONConPromise() {
+function obtenerDatosJSONConPromise(usarJSON) {
   return new Promise((resolve) => {
-    // Simular retraso de 1 segundo
     setTimeout(() => {
-      fetch('facturas.json')
-        .then(respuesta => {
-          if (!respuesta.ok) {
-            throw new Error("No se pudo cargar el archivo facturas.json");
-          }
-          return respuesta.json();
-        })
-        .then(datos => {
-          console.log("datos", datos);
-          resolve(datos);
-        })
-        .catch(error => {
-          console.error("Error al obtener datos del archivo JSON:", error);
-          resolve({ facturas: [] });
-        });
+      if (usarJSON) {
+        // Cargar desde archivo JSON por fetch
+        fetch('facturas.json')
+          .then(respuesta => {
+            if (!respuesta.ok) throw new Error("No se pudo cargar facturas.json");
+            return respuesta.json();
+          })
+          .then(datos => resolve(datos))
+          .catch(error => {
+            console.error("Error al obtener datos desde JSON:", error);
+            resolve({ facturas: [] });
+          });
+      } else {
+        // Cargar directamente desde el módulo
+        //console.log("Datos cargados desde módulo JS:", facturas);
+        resolve(facturas.facturas); // Ya es un objeto
+      }
     }, 1000);
   });
 }
 
 
-  function cargarDatosConPromise(usarAPIP = false) {
-    const contenedor = document.getElementById("tabla-container");
-  
-    const fuenteDatos = usarAPIP ? obtenerDatosAPI() : obtenerDatosJSON();
-  
-    fuenteDatos
-      .then(respuesta => {
-        // Si viene de API simulada, es un array directo
-        // Si viene de archivo JSON, esperamos un objeto con 'facturas'
-        facturasGlobal = usarAPIP ? (respuesta || []) : (respuesta.facturas || []);
-  
-        if (facturasGlobal.length === 0) {
-          contenedor.innerHTML = "<p>No hay datos disponibles.</p>";
-          return;
-        }
-        renderizarTabla();
-      })
-      .catch(error => {
-        console.error("Error al cargar las facturas:", error);
-        contenedor.innerHTML = "<p>Error al cargar los datos.</p>";
-      });
+function cargarDatosConPromise(boton) {
+  const contenedor = document.getElementById("tabla-container");
+  let fuentePromise;
+  let extraerFacturas;
+//console.log("dentro de cargar dator promise boton: ", boton)
+boton = Number(boton); // 👈 Conversión aquí
+  switch (boton) {
+    
+    case 1:
+      fuentePromise = obtenerDatosAPIConPromise();
+      extraerFacturas = respuesta => respuesta || [];
+      break;
+    case 2:
+      fuentePromise = obtenerDatosJSONConPromise(true);
+      extraerFacturas = respuesta => respuesta.facturas || [];
+      break;
+    case 3:
+      fuentePromise = obtenerDatosJSONConPromise(false);
+      extraerFacturas = respuesta => respuesta || [];
+      break;
+    default:
+      console.warn("Botón no reconocido:", boton);
+      contenedor.innerHTML = "<p>Fuente de datos no válida.</p>";
+      return;
   }
+
+  fuentePromise
+    .then(respuesta => {
+      facturasGlobal = extraerFacturas(respuesta);
+
+      if (!facturasGlobal.length) {
+        contenedor.innerHTML = "<p>No hay datos disponibles.</p>";
+        return;
+      }
+
+      renderizarTabla();
+    })
+    .catch(error => {
+      console.error("Error al cargar las facturas:", error);
+      contenedor.innerHTML = "<p>Error al cargar los datos.</p>";
+    });
+}
+
   
 
 
@@ -349,3 +379,34 @@ contador.style.color = "#FFFFFF"; // Letras blancas
     callback(); // ejecuta función que carga datos
   }
 
+//----------------------ASIGNA FUNCIONES A BOTONES-----------------------------------
+
+
+  // Asignar funciones al botón al cargar el DOM para ASYNC-AWAIT
+  document.addEventListener("DOMContentLoaded", () => {
+    const botones = document.querySelectorAll(".async-btn"); // ✅ seleccionar todos los botones
+  
+    botones.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const boton = btn.dataset.boton; // extraer número de "boton"
+        //console.log("boton:", boton);
+        activarBoton(btn);
+        medirCarga(() => cargarDatos(boton), "#4CAF50");
+      });
+    });
+  });
+  
+  
+  // Asignar funciones al botón al cargar el DOM para PROMISE
+  document.addEventListener("DOMContentLoaded", () => {
+    const botones = document.querySelectorAll(".promise-btn"); // ✅ seleccionar todos los botones
+  
+    botones.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const boton = btn.dataset.boton; // extraer número de "boton"
+        //console.log("boton:", boton);
+        activarBoton(btn);
+        medirCarga(() => cargarDatosConPromise(boton), '#2196F3');
+      });
+    });
+  });
